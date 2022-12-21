@@ -210,7 +210,6 @@ bindsym $Mod+n scratchpad toggle
 
 ## Настройка специальных окон
 # for_window [window_role="stalonetray"] floating enable
-## Закоментировано
 for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
 for_window [window_type="dialog|menu"] floating enable
 # for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
@@ -224,7 +223,7 @@ for_window [title="(?i)htop"] floating enable, resize set 1280 600, move positio
 # for_window [class="(?i)firefox|xfce4-terminal|thunar|subl3|mousepad|mupdf"] focus
 # for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
 # for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
-##Конц задокументированного
+
 
 for_window [workspace=$ws3] layout tabbed
 # for_window [workspace=$ws6] layout tabbed
@@ -236,7 +235,7 @@ for_window [title="floating"] move window to scratchpad, scratchpad show, floati
 
 ## открытие окон приложений в рабочих пространствах
 # assign [title="(?i)term-tiling"] $ws1
-assign [title="htop"] $ws1
+assign [title="htop"] $ws4
 # assign [class="(?i)firefox|chromium"] $ws2
 # assign [class="(?i)mousepad|subl3"] $ws3
 # assign [class="(?i)smplayer"] $ws4

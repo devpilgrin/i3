@@ -298,8 +298,8 @@ icon-next = 
 [module/date]
 type = internal/date
 interval = 1
-date = "%e %b,"
-date-alt = "%e %B %Y,"
+date = "%a %e %b,"
+date-alt = "%a %e %B %Y,"
 time = "%H:%M"
 time-alt = "%H:%M:%S"
 format-prefix = " "

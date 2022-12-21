@@ -10,3 +10,4 @@ cmd="$(systemctl status $daemon | grep -i run 2>/dev/null || echo '')"
 
 echo "%{F#AEB4C6}${daemon}%{F-} ${state}"
 exit 0
+

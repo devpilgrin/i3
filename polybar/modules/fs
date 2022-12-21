@@ -1,0 +1,26 @@
+# ┌──────────────────┐
+# │░███████╗███████╗░│
+# │░██╔════╝██╔════╝░│
+# │░█████╗░░███████╗░│
+# │░██╔══╝░░╚════██║░│
+# │░██║░░░░░███████║░│
+# │░╚═╝░░░░░╚══════╝░│
+# └──────────────────┘
+# ┌──────────────────┐
+# │ File Systems     │
+# └──────────────────┘
+
+[module/fs]
+type = internal/fs
+mount-0 = /
+mount-1 = /home
+# mount-2 = /media/files
+interval = 100
+fixed-values = true
+spacing = 2
+format-mounted = <label-mounted>
+format-unmounted = <label-unmounted>
+label-mounted =  %used%
+label-mounted-foreground = ${colors.foreground}
+label-unmounted = no mount
+label-unmounted-foreground = ${colors.red}

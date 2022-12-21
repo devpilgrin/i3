@@ -1,0 +1,306 @@
+# ┌─────────────────────────────────────────────────────────────┐
+# │ ░██████╗░░██████╗░██╗░░░░░██╗░░░██╗██████╗░░█████╗░██████╗░░│
+# │ ░██╔══██╗██╔═══██╗██║░░░░░╚██╗░██╔╝██╔══██╗██╔══██╗██╔══██╗░│
+# │ ░██████╔╝██║░░░██║██║░░░░░░╚████╔╝░██████╔╝███████║██████╔╝░│
+# │ ░██╔═══╝░██║░░░██║██║░░░░░░░╚██╔╝░░██╔══██╗██╔══██║██╔══██╗░│
+# │ ░██║░░░░░╚██████╔╝███████╗░░░██║░░░██████╔╝██║░░██║██║░░██║░│
+# │ ░╚═╝░░░░░░╚═════╝░╚══════╝░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝░│
+# │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+# │ ░░██████╗░██████╗░███╗░░░██╗███████╗██╗░██████╗░░░░░░░░░░░░░│
+# │ ░██╔════╝██╔═══██╗████╗░░██║██╔════╝██║██╔════╝░░░░░░░░░░░░░│
+# │ ░██║░░░░░██║░░░██║██╔██╗░██║█████╗░░██║██║░░███╗░░░░░░░░░░░░│
+# │ ░██║░░░░░██║░░░██║██║╚██╗██║██╔══╝░░██║██║░░░██║░░░░░░░░░░░░│
+# │ ░╚██████╗╚██████╔╝██║░╚████║██║░░░░░██║╚██████╔╝░░░░░░░░░░░░│
+# │ ░░╚═════╝░╚═════╝░╚═╝░░╚═══╝╚═╝░░░░░╚═╝░╚═════╝░░░░░░░░░░░░░│
+# │ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+# └─────────────────────────────────────────────────────────────┘
+# https://patorjk.com/software/taag/#p=display&h=0&v=3&c=bash&w=%E2%96%91&f=ANSI%20Shadow&t=%20fs%20
+
+# _ COLORS _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[colors]
+include-file = ~/.config/i3/polybar/blocks/colors
+
+# _ SETTINGS _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[settings]
+screenchange-reload = true
+
+# _ GLOBAL/WM _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+# TOP BAR ############################################
+
+[bar/top]
+include-file = ~/.config/i3/polybar/blocks/fonts
+modules-left = app web chrome vscode term rhytm calc uparch mpd
+modules-center = i3
+modules-right = alsa date xkeyboard power
+include-file = ~/.config/i3/polybar/blocks/bar
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 22
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
+
+# LEFTTOP BAR ##########################################
+
+[bar/lefttop]
+include-file = ~/.config/i3/polybar/blocks/fonts
+modules-left = partleft app vscode term rhytm calc partright
+modules-center = i3
+modules-right = date
+include-file = ~/.config/i3/polybar/blocks/bar
+
+# RIGHTOP BAR ##########################################
+
+[bar/righttop]
+include-file = ~/.config/i3/polybar/blocks/fonts
+modules-left = partleft app chery chrome partright
+modules-center = i3
+modules-right = fs cpu memory date
+include-file = ~/.config/i3/polybar/blocks/bar
+
+# _ MODULES _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+include-file = ~/.config/i3/polybar/modules/modules.ini
+
+# = WTR ===========================================================
+
+[module/wtr]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/wtr.sh
+format-foreground = ${colors.magenta}
+# format-padding = 1
+interval = 600
+label-font = 0
+
+# = UPARCH =======================================================
+
+[module/uparch]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/uparch.sh
+interval = 600
+format-prefix = "  "
+format-prefix-foreground = ${colors.red}
+click-left = pamac-manager --updates
+
+# = IP ===========================================================
+
+[module/ip]
+type = custom/script
+interval = 600
+format = "<label>"
+format-prefix = "ip: "
+# format-padding = 1
+exec = echo "$(wget -qO- https://canihazip.com/s | sed -e 's/[^[:digit:]\|.]//g')"
+exec-if = ping -c 1 ya.ru
+
+# = TOP ===========================================================
+
+[module/tor]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/status tor
+interval = 6
+format = <label>
+# format-padding = 1
+click-left = "systemctl restart tor"
+click-right = "systemctl stop tor"
+
+# = TITLE ========================================================
+
+[module/title]
+type = internal/xwindow
+format-padding = 1
+label = "%title:0:20:...%"
+label-maxlen = 20
+
+# = TERM =========================================================
+
+[module/term]
+type = custom/text
+content = 
+click-left = xfce4-terminal &
+click-right = xfce4-terminal -e htop &
+
+# = APP ==========================================================
+
+[module/app]
+type = custom/text
+content = 
+click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
+
+# = RSS ==========================================================
+
+[module/rss]
+type = custom/text
+content = 
+click-left = xfce4-terminal -e newsboat &
+click-right =
+
+# = WEB ==========================================================
+
+[module/web]
+type = custom/text
+content = 
+click-left = ~/.bin/findapp firefox &
+click-right =
+
+# = CHROME ========================================================
+
+[module/chrome]
+type = custom/text
+content = 
+click-left = /opt/google/chrome/chrome &
+click-right =
+
+# = CALC =========================================================
+
+[module/calc]
+type = custom/text
+content = 
+click-left = /usr/bin/galculator &
+click-right =
+
+# = PARTRIGHT ====================================================
+
+[module/partright]
+type = custom/text
+content = ⦘
+
+# = PARTLEFT =====================================================
+
+[module/partleft]
+type = custom/text
+content = ⦗
+
+# = CHERY ========================================================
+
+[module/chery]
+type = custom/text
+content = 
+click-left = /usr/bin/cherrytree &
+click-right =
+
+# = RHYTM ========================================================
+
+[module/rhytm]
+type = custom/text
+content = 蓼
+click-left = /usr/bin/rhythmbox &
+click-right =
+
+# = VSCODE =======================================================
+
+[module/vscode]
+type = custom/text
+content = ﬏
+click-left = /usr/bin/code &
+click-right =
+
+# = CPU ==========================================================
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+label = %percentage%%
+
+# = MEMORY =======================================================
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+label = %percentage_used%%
+
+# = TEMPERATURE ==================================================
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.primary}
+
+# = ALSA =========================================================
+
+[module/alsa]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+format-muted =  0%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+# = XKEYBOARD ====================================================
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix = " "
+label = %layout%
+
+# = POWER ========================================================
+
+[module/power]
+type = custom/text
+content = 襤
+click-left = ~/.config/i3/polybar/scripts/power
+
+# = NETWORK ======================================================
+
+[module/network]
+type = internal/network
+interface = enp2s5
+interval = 1.0
+format-connected = "  <label-connected> "
+format-packetloss = <animation-packetloss>
+label-connected =  %upspeed:2% %downspeed:2%
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = #000000
+
+# = MPD ==========================================================
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+# password = mysecretpassword
+interval = 2
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
+label-offline =  mpd off
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+
+# = DATE =========================================================
+
+[module/date]
+type = internal/date
+interval = 1
+date = "%e %b,"
+date-alt = "%e %B %Y,"
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+format-prefix = " "
+label = %date% %time%

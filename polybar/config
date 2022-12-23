@@ -72,16 +72,6 @@ include-file = ~/.config/i3/polybar/blocks/bar
 
 include-file = ~/.config/i3/polybar/modules/modules.ini
 
-# = UPARCH =======================================================
-
-[module/uparch]
-type = custom/script
-exec = ~/.config/i3/polybar/scripts/uparch.sh
-interval = 600
-format-prefix = "  "
-format-prefix-foreground = ${colors.red}
-click-left = pamac-manager --updates
-
 # = IP ===========================================================
 
 [module/ip]

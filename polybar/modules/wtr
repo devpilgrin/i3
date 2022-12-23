@@ -1,0 +1,9 @@
+# = WTR ===========================================================
+
+[module/wtr]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/wtr.sh
+format-foreground = ${colors.magenta}
+# format-padding = 1
+interval = 600
+label-font = 0

@@ -1,0 +1,13 @@
+# = NETWORK ======================================================
+
+[module/network]
+type = internal/network
+interface = enp2s5
+interval = 1.0
+format-connected = "  <label-connected> "
+format-packetloss = <animation-packetloss>
+label-connected =  %upspeed:2% %downspeed:2%
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = #000000

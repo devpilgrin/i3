@@ -256,31 +256,3 @@ animation-packetloss-0 = ⚠
 animation-packetloss-0-foreground = #ffa64c
 animation-packetloss-1 = 
 animation-packetloss-1-foreground = #000000
-
-# = MPD ==========================================================
-
-[module/mpd]
-type = internal/mpd
-host = 127.0.0.1
-port = 6600
-# password = mysecretpassword
-interval = 2
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
-label-offline =  mpd off
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-
-# = DATE =========================================================
-
-[module/date]
-type = internal/date
-interval = 1
-date = "%a %e %b,"
-date-alt = "%a %e %B %Y,"
-time = "%H:%M"
-time-alt = "%H:%M:%S"
-format-prefix = " "
-label = %date% %time%

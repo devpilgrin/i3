@@ -1,0 +1,15 @@
+# = MPD ==========================================================
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+# password = mysecretpassword
+interval = 2
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
+label-offline =  mpd off
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 

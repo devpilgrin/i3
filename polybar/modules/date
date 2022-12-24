@@ -1,0 +1,12 @@
+
+# = DATE =========================================================
+
+[module/date]
+type = internal/date
+interval = 1
+date = "%a %e %b,"
+date-alt = "%a %e %B %Y,"
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+format-prefix = " "
+label = %date% %time%

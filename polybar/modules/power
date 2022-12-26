@@ -1,0 +1,6 @@
+# = POWER ========================================================
+
+[module/power]
+type = custom/text
+content = 襤
+click-left = ~/.config/i3/polybar/scripts/power

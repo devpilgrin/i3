@@ -1,0 +1,8 @@
+
+# = XKEYBOARD ====================================================
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix = " "
+label = %layout%

@@ -218,22 +218,6 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.primary}
 
-# = ALSA =========================================================
 
-[module/alsa]
-type = internal/alsa
-format-volume = <ramp-volume> <label-volume>
-format-muted =  0%
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-
-# = XKEYBOARD ====================================================
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-format-prefix = " "
-label = %layout%
 
 

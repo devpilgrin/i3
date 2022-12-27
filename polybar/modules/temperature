@@ -1,0 +1,15 @@
+# = TEMPERATURE ==================================================
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.primary}

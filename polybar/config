@@ -194,10 +194,3 @@ format-prefix = " "
 format-prefix-foreground = ${colors.primary}
 label = %percentage%%
 
-# = MEMORY =======================================================
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-label = %percentage_used%%

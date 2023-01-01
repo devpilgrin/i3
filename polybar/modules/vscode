@@ -1,0 +1,8 @@
+
+# = VSCODE =======================================================
+
+[module/vscode]
+type = custom/text
+content = ﬏
+click-left = /usr/bin/code &
+click-right =

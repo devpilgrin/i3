@@ -176,21 +176,3 @@ type = custom/text
 content = 蓼
 click-left = /usr/bin/rhythmbox &
 click-right =
-
-# = VSCODE =======================================================
-
-[module/vscode]
-type = custom/text
-content = ﬏
-click-left = /usr/bin/code &
-click-right =
-
-# = CPU ==========================================================
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.primary}
-label = %percentage%%
-

@@ -1,0 +1,8 @@
+
+# = CHROME ========================================================
+
+[module/chrome]
+type = custom/text
+content = 
+click-left = /opt/google/chrome/chrome &
+click-right =

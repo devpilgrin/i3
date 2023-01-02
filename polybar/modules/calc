@@ -1,0 +1,8 @@
+
+# = CALC =========================================================
+
+[module/calc]
+type = custom/text
+content = 
+click-left = /usr/bin/galculator &
+click-right =

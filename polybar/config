@@ -133,21 +133,6 @@ content = 
 click-left = ~/.bin/findapp firefox &
 click-right =
 
-# = CHROME ========================================================
-
-[module/chrome]
-type = custom/text
-content = 
-click-left = /opt/google/chrome/chrome &
-click-right =
-
-# = CALC =========================================================
-
-[module/calc]
-type = custom/text
-content = 
-click-left = /usr/bin/galculator &
-click-right =
 
 # = PARTRIGHT ====================================================
 

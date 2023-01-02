@@ -1,0 +1,8 @@
+
+# = CHERY ========================================================
+
+[module/chery]
+type = custom/text
+content = 
+click-left = /usr/bin/cherrytree &
+click-right =

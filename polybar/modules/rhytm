@@ -1,0 +1,8 @@
+
+# = RHYTM ========================================================
+
+[module/rhytm]
+type = custom/text
+content = 蓼
+click-left = /usr/bin/rhythmbox &
+click-right =

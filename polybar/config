@@ -161,18 +161,3 @@ content = ⦘
 type = custom/text
 content = ⦗
 
-# = CHERY ========================================================
-
-[module/chery]
-type = custom/text
-content = 
-click-left = /usr/bin/cherrytree &
-click-right =
-
-# = RHYTM ========================================================
-
-[module/rhytm]
-type = custom/text
-content = 蓼
-click-left = /usr/bin/rhythmbox &
-click-right =

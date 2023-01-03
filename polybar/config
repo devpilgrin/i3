@@ -125,15 +125,6 @@ content = 
 click-left = xfce4-terminal -e newsboat &
 click-right =
 
-# = WEB ==========================================================
-
-[module/web]
-type = custom/text
-content = 
-click-left = ~/.bin/findapp firefox &
-click-right =
-
-
 # = PARTRIGHT ====================================================
 
 [module/partright]

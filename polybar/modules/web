@@ -1,0 +1,9 @@
+
+# = WEB ==========================================================
+
+[module/web]
+type = custom/text
+content = 
+click-left = ~/.bin/findapp firefox &
+click-right =
+

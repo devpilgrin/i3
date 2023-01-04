@@ -110,21 +110,6 @@ content = 
 click-left = xfce4-terminal &
 click-right = xfce4-terminal -e htop &
 
-# = APP ==========================================================
-
-[module/app]
-type = custom/text
-content = 
-click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
-
-# = RSS ==========================================================
-
-[module/rss]
-type = custom/text
-content = 
-click-left = xfce4-terminal -e newsboat &
-click-right =
-
 # = PARTRIGHT ====================================================
 
 [module/partright]

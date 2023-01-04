@@ -1,0 +1,7 @@
+# = RSS ==========================================================
+
+[module/rss]
+type = custom/text
+content = 
+click-left = xfce4-terminal -e newsboat &
+click-right =

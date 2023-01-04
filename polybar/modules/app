@@ -1,0 +1,7 @@
+
+# = APP ==========================================================
+
+[module/app]
+type = custom/text
+content = 
+click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme

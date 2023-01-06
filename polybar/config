@@ -102,13 +102,6 @@ format-padding = 1
 label = "%title:0:20:...%"
 label-maxlen = 20
 
-# = TERM =========================================================
-
-[module/term]
-type = custom/text
-content = 
-click-left = xfce4-terminal &
-click-right = xfce4-terminal -e htop &
 
 # = PARTRIGHT ====================================================
 

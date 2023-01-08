@@ -1,0 +1,18 @@
+
+# TOP BAR ############################################
+
+[bar/top]
+include-file = ~/.config/i3/polybar/blocks/fonts
+modules-left = app web chrome vscode term rhytm calc uparch mpd
+modules-center = i3
+modules-right = alsa date xkeyboard power
+include-file = ~/.config/i3/polybar/blocks/bar
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 22
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0

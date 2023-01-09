@@ -54,16 +54,6 @@ include-file = ~/.config/i3/polybar/blocks/bar
 
 include-file = ~/.config/i3/polybar/modules/modules.ini
 
-# = IP ===========================================================
-
-[module/ip]
-type = custom/script
-interval = 600
-format = "<label>"
-format-prefix = "ip: "
-# format-padding = 1
-exec = echo "$(wget -qO- https://canihazip.com/s | sed -e 's/[^[:digit:]\|.]//g')"
-exec-if = ping -c 1 ya.ru
 
 # = TOP ===========================================================
 

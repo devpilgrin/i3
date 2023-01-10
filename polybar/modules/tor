@@ -1,0 +1,11 @@
+
+# = TOP ===========================================================
+
+[module/tor]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/status tor
+interval = 6
+format = <label>
+# format-padding = 1
+click-left = "systemctl restart tor"
+click-right = "systemctl stop tor"

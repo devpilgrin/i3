@@ -54,16 +54,6 @@ include-file = ~/.config/i3/polybar/blocks/bar
 
 include-file = ~/.config/i3/polybar/modules/modules.ini
 
-
-# = TITLE ========================================================
-
-[module/title]
-type = internal/xwindow
-format-padding = 1
-label = "%title:0:20:...%"
-label-maxlen = 20
-
-
 # = PARTRIGHT ====================================================
 
 [module/partright]

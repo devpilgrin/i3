@@ -54,15 +54,5 @@ include-file = ~/.config/i3/polybar/blocks/bar
 
 include-file = ~/.config/i3/polybar/modules/modules.ini
 
-# = PARTRIGHT ====================================================
 
-[module/partright]
-type = custom/text
-content = ⦘
-
-# = PARTLEFT =====================================================
-
-[module/partleft]
-type = custom/text
-content = ⦗
 
